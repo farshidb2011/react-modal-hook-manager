@@ -7,7 +7,7 @@ export default function useModal(name?: string) {
     const {
         Modals,
         setModals,
-    } = useContext(ModalContext);
+    } = useContext(ModalContext);    
 
     const [Name, setName] = useState(name);
     const [CurrentModal, setCurrentModal] = useState<IModal | null>(null);
@@ -33,9 +33,7 @@ export default function useModal(name?: string) {
         }
     }
 
-    const getMeta = (name?
-        
-        : string) => {
+    const getMeta = (name?: string) => {
         const n = name || Name;
         if (n) {
             const modal = Modals[n!];
@@ -61,7 +59,22 @@ export default function useModal(name?: string) {
         }
     }
 
-    const closeModal = (name?: string) => {
+    const destroyModal = (name?: string) => {
+        const n = name || Name;
+        if (n) {
+            setModals(prev => {
+                const newModals = { ...prev };
+                delete newModals[n];
+                return newModals;
+            });
+        }
+    }
+
+    const destroyAllModals = () => {
+        setModals({});
+    }
+
+    const closeModal = (name?: string, destroy = false) => {
         const n = name || Name;
         if (n) {
             setModal(n, (modal) => ({
@@ -69,35 +82,24 @@ export default function useModal(name?: string) {
                 isOpen: false,
             }));
         }
+        if (destroy) {
+            setTimeout(() => {
+                destroyModal(name);
+            }, 200);
+        }
     }
 
-
-    const closeAllModals = () => {
-        const modals = { ...Modals };
-        for (const key in modals) {
-            if (modals.hasOwnProperty(key)) {
-                const modal = modals[key];
-                if (modal.isOpen) {
-                    modal.isOpen = false;
-                }
+    const closeAllModals = (names?: string[], destroy = false) => {
+        if (names) {
+            for (const name of names) {
+                closeModal(name, true);
+            }
+        } else {
+            for(const name in Modals) {
+                closeModal(name, destroy);
             }
         }
-        setModals(modals);
     }
-
-    const closeAllModalsExcept = (name: string[]) => {
-        const modals = { ...Modals };
-        for (const key in modals) {
-            if (modals.hasOwnProperty(key)) {
-                const modal = modals[key];
-                if (modal.isOpen && !name.includes(key)) {
-                    modal.isOpen = false;
-                }
-            }
-        }
-        setModals(modals);
-    }
-
 
     const openModal = (name?: string) => {
         const n = name || Name;
@@ -146,36 +148,17 @@ export default function useModal(name?: string) {
         }));
     }
 
-    const destroyModal = (name?: string) => {
-        const n = name || Name;
-        if (n) {
-            setModals(prev => {
-                const newModals = { ...prev };
-                delete newModals[n];
-                return newModals;
-            });
-        }
-    }
-
-    const closeAndDestroy = (name?: string, timeout: number = 200) => {
-        closeModal(name);
-        setTimeout(() => {
-            destroyModal(name);
-        }, timeout);
-    }
-
     return {
         getCurrentModal,
+        createModal,
         toggleModal,
+        openModal,
         closeModal,
         closeAllModals,
-        closeAllModalsExcept,
-        openModal,
-        createModal,
         destroyModal,
-        closeAndDestroy,
+        destroyAllModals,
         isOpenModal,
         hasModal,
-        getMeta,
+        getMeta
     };
 }
