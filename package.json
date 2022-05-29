@@ -1,5 +1,5 @@
 {
-  "name": "@farshidb2011/react-modal-management",
+  "name": "react-modal-management",
   "version": "1.0.0",
   "description": "manage multi modal in react",
   "scripts": {
@@ -40,8 +40,6 @@
     "@rollup/plugin-typescript": "^8.3.2",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.5",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
     "rollup": "^2.75.1",
     "rollup-plugin-dts": "^4.2.2",
     "tslib": "^2.4.0",
