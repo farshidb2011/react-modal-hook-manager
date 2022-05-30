@@ -1,5 +1,5 @@
 {
-  "name": "react-modal-management",
+  "name": "react-modal-manager",
   "version": "2.0.0",
   "description": "manage multi modal in react",
   "scripts": {
@@ -7,29 +7,29 @@
     "rollup": "rollup -c --environment INCLUDE_DEPS,BUILD:production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "main": "dist/cjs/index.min.js",
+  "module": "dist/esm/index.min.js",
   "files": [
     "dist"
   ],
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/farshidb2011/react-modal-management.git"
+    "url": "git+https://github.com/farshidb2011/react-modal-manager.git"
   },
   "keywords": [
     "react",
     "modal",
-    "management",
-    "modal-management",
-    "react-modal-management"
+    "manager",
+    "modal-manager",
+    "react-modal-manager"
   ],
   "author": "farshid bahadori",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/farshidb2011/react-modal-management/issues"
+    "url": "https://github.com/farshidb2011/react-modal-manager/issues"
   },
-  "homepage": "https://github.com/farshidb2011/react-modal-management#readme",
+  "homepage": "https://github.com/farshidb2011/react-modal-manager#readme",
   "peerDependencies": {
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
@@ -42,6 +42,7 @@
     "@types/react-dom": "^18.0.5",
     "rollup": "^2.75.1",
     "rollup-plugin-dts": "^4.2.2",
+    "rollup-plugin-terser": "^7.0.2",
     "tslib": "^2.4.0",
     "typescript": "^4.7.2"
   }
