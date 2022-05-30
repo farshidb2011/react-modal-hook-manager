@@ -1,5 +1,5 @@
 {
-  "name": "react-modal-manager",
+  "name": "react-modal-hook-manager",
   "version": "2.0.0",
   "description": "manage multi modal in react",
   "scripts": {
@@ -15,21 +15,21 @@
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/farshidb2011/react-modal-manager.git"
+    "url": "git+https://github.com/farshidb2011/react-modal-hook-manager.git"
   },
   "keywords": [
     "react",
     "modal",
     "manager",
     "modal-manager",
-    "react-modal-manager"
+    "react-modal-hook-manager"
   ],
   "author": "farshid bahadori",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/farshidb2011/react-modal-manager/issues"
+    "url": "https://github.com/farshidb2011/react-modal-hook-manager/issues"
   },
-  "homepage": "https://github.com/farshidb2011/react-modal-manager#readme",
+  "homepage": "https://github.com/farshidb2011/react-modal-hook-manager#readme",
   "peerDependencies": {
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
