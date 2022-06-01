@@ -5,7 +5,7 @@
   "scripts": {
     "build": "tsc",
     "rollup": "rollup -c --environment INCLUDE_DEPS,BUILD:production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "main": "dist/cjs/index.min.js",
   "module": "dist/esm/index.min.js",
@@ -35,14 +35,27 @@
     "react-dom": "^18.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/plugin-transform-react-jsx": "^7.17.12",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-typescript": "^7.17.12",
     "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.3.2",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@types/jest": "^27.5.1",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.5",
+    "babel-jest": "^28.1.0",
+    "jest": "^28.1.0",
+    "jest-environment-jsdom": "^28.1.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
     "rollup": "^2.75.1",
     "rollup-plugin-dts": "^4.2.2",
     "rollup-plugin-terser": "^7.0.2",
+    "ts-jest": "^28.0.3",
     "tslib": "^2.4.0",
     "typescript": "^4.7.2"
   }

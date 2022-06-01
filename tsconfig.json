@@ -10,6 +10,10 @@
       "dom",
       "es2016",
     ],
+    "baseUrl": "src",
+    "paths": {
+      "test-utils": ["./utils/test-utils.tsx"]
+    },
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
