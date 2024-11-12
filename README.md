@@ -1,4 +1,4 @@
-# react modal hook mangaer
+# React Modal Hook Manager
 
 This package does not include any components for displaying modals. You need to create your own components to show modals.
 
