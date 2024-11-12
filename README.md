@@ -1,12 +1,12 @@
 # react modal hook mangaer
 
-this package don't have any component for show modal. so you must created your own component for show modal.
+This package does not include any components for displaying modals. You need to create your own components to show modals.
 
-you can use this package for mangage modals.
+Use this package to manage modal states easily.
 
-for example:
+## Example:
 
-Add ModalProvider to your root component.
+Add ModalProvider to your root component:
 
 ```js
 index.jsx;
@@ -22,8 +22,7 @@ ReactDOM.render(
 );
 ```
 
-Create your modal component.
-Render all Dialog component in Modals state.
+Create your modal component: Render each modal component in the Modals state.
 
 ```js
 Modal.jsx;
@@ -57,9 +56,9 @@ export default function Modal() {
 }
 ```
 
-Component for show modal.
+## Creating a Component to Show in a Modal
 
-Note: Every component can show in modal.
+### Note: Any component can be displayed in a modal.
 
 ```js
 Helloworld1.jsx;
@@ -74,7 +73,7 @@ export default function HelloWorld1() {
 }
 ```
 
-Other component for show modal.
+Another example component to show in a modal:
 
 ```js
 Helloworld2.jsx;
@@ -89,8 +88,8 @@ export default function HelloWorld2() {
 }
 ```
 
-Import components and use it.
-With createModal function you can create modal.
+## Import and Use the Components
+With the ```createModal``` function, you can create modals.
 
 ```js
 App.jsx;
